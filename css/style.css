@@ -271,7 +271,7 @@ ol.timeline li::before{
   color:var(--text-soft);
 }
 /* ---- 地図(iframe)をスマホ幅に合わせる ---- */
-.main iframe{
+main iframe{
   display:block;
   width:100%;
   max-width:100%;
