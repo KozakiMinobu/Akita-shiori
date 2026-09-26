@@ -6,5 +6,5 @@ $(function(){
         $('.weather-schedule').hide();
         $('.weather-schedule[data-weather-schedule="' + weather + '"]').show();
     });
-    $('.weather-btn[data-weather="sunny"]').trigger('click');
+    $('.weather-btn[data-weather="rainy"]').trigger('click');
 });
