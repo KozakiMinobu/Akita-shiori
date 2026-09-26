@@ -1,0 +1,340 @@
+/* =========================================================
+   秋田旅行 電子しおり - スタイルシート
+   使い方: <link rel="stylesheet" href="akita-trip.css"> を
+   <head> に入れ、下記の Google Fonts も一緒に読み込んでください。
+
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+   ========================================================= */
+
+:root{
+  --accent:#cb8347;       /* オレンジ（テーマカラー） */
+  --accent-dark:#a86a37;  /* 見出し・強調用の濃いオレンジ */
+  --on-accent:#ffffff;    /* オレンジ背景の上の文字色 */
+  --bg:#fdf6e3;           /* ページ全体の背景（薄い黄色） */
+  --bg-card:#fffdf5;      /* カード・枠の背景 */
+  --text:#4a3c28;         /* 本文の文字色 */
+  --text-soft:#8a7860;    /* 補足テキストの文字色 */
+  --line:#e8dbb8;         /* 区切り線の色 */
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:border-box;}
+html{
+  scroll-padding-top:calc(64px + env(safe-area-inset-top,0px));
+}
+html,body{height:100%;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:"Noto Sans JP","Zen Maru Gothic",sans-serif;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent-dark);}
+
+/* ---- タイトル（文字サイズにフィットする二重線フレーム） ---- */
+header.title-wrap{
+  margin:20px 16px 4px;
+  text-align:center;
+}
+.title-frame{
+  display:inline-block;
+  position:relative;
+  padding:12px 30px;
+  border:3px solid var(--accent);
+  border-radius:999px;
+  background:var(--bg-card);
+}
+.title-frame::before{
+  content:"";
+  position:absolute;
+  inset:4px;
+  border:1.5px solid var(--accent);
+  border-radius:999px;
+  pointer-events:none;
+}
+.title-frame h1{
+  position:relative;
+  margin:0;
+  color:var(--accent-dark);
+  font-family:"チェックポイント","Checkpoint","Zen Maru Gothic",sans-serif;
+  font-weight:700;
+  font-size:1.1rem;
+  letter-spacing:.02em;
+  white-space:nowrap;
+}
+.title-frame .title-main{
+  font-size:1.6em;   /* ← ここの数値を変えると「秋田旅行」の大きさが変わります */
+}
+.title-frame .title-date{
+  font-size:1em;      /* h1 の 1.1rem のまま（変更しない） */
+}
+
+/* ---- メイン目次（タイトルとは別要素） ---- */
+nav.tabs{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:14px 16px 4px;
+}
+nav.tabs a{
+  padding:7px 16px;
+  background:var(--accent);
+  color:var(--on-accent);
+  border-radius:999px;
+  text-decoration:none;
+  font-family:"Segoe UI","Meiryo",sans-serif;
+  font-weight:700;
+  font-size:.85rem;
+  letter-spacing:.02em;
+}
+nav.tabs a:active{background:var(--accent-dark);}
+
+main{
+  max-width:640px;
+  margin:0 auto;
+  padding:4px 16px 40px;
+}
+
+section{
+  scroll-margin-top:70px;
+  padding:34px 0 6px;
+}
+section + section{
+  border-top:1px dashed var(--line);
+}
+
+h2.section-title{
+  font-family:"Segoe UI","Meiryo",sans-serif;
+  font-size:1.25rem;
+  font-weight:700;
+  color:var(--accent-dark);
+  display:inline-block;
+  margin:0 0 18px;
+  padding:2px 4px 6px;
+  border-bottom:3px solid var(--accent);
+}
+
+/* ---- スケジュール下の日付サブ目次 ---- */
+.day-nav{
+  display:flex;
+  gap:8px;
+  margin:-6px 0 22px;
+  flex-wrap:wrap;
+}
+.day-nav a{
+  text-decoration:none;
+  color:var(--accent-dark);
+  background:var(--bg-card);
+  border:1.5px solid var(--accent);
+  border-radius:999px;
+  padding:6px 16px;
+  font-size:.88rem;
+  font-weight:500;
+}
+.day-nav a:active{background:var(--accent);color:var(--on-accent);}
+
+/* ---- 観光リストのカード ---- */
+.spot-card{
+  background:var(--bg-card);
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:18px 18px 16px;
+  margin-bottom:16px;
+}
+.spot-card h3{
+  margin:0 0 10px;
+  font-size:1.08rem;
+}
+.spot-card h3 a{
+  color:var(--accent-dark);
+  text-decoration:none;
+  border-bottom:1.5px solid var(--accent);
+}
+.spot-body{
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+}
+.spot-card dl{
+  margin:0;
+  font-size:.92rem;
+  flex:1 1 auto;
+  min-width:0;
+}
+.spot-card dt{
+  color:var(--text-soft);
+  font-weight:500;
+  margin-top:6px;
+}
+.spot-card dt:first-child{margin-top:0;}
+.spot-card dd{
+  margin:2px 0 0;
+}
+.spot-photo{
+  flex:0 0 160px;
+  width:160px;
+  height:160px;
+  border-radius:10px;
+  overflow:hidden;
+  background:#f1e8c9;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.spot-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.spot-photo .fallback{
+  color:var(--text-soft);
+  font-size:.62rem;
+  text-align:center;
+  padding:4px;
+  line-height:1.3;
+}
+
+/* ---- スケジュールのタイムライン ---- */
+.day-block{margin-bottom:30px;}
+.day-heading{
+  scroll-margin-top:70px;
+  display:inline-block;
+  font-family:"Zen Maru Gothic",sans-serif;
+  font-weight:700;
+  font-size:1.02rem;
+  color:var(--on-accent);
+  background:var(--accent-dark);
+  border-radius:8px;
+  padding:5px 14px;
+  margin:0 0 16px;
+}
+ol.timeline{
+  list-style:none;
+  margin:0;
+  padding:0;
+  position:relative;
+}
+ol.timeline::before{
+  content:"";
+  position:absolute;
+  left:4px;
+  top:9px;
+  bottom:0;
+  width:2px;
+  background:var(--accent);
+}
+ol.timeline li{
+  position:relative;
+  padding:0 0 22px 26px;
+}
+ol.timeline li:last-child{
+  padding-bottom:0;
+}
+ol.timeline li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:4px;
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:var(--accent);
+}
+.t-time{
+  font-weight:700;
+  color:var(--accent-dark);
+  font-size:.95rem;
+}
+.t-event{
+  margin:2px 0 0;
+  font-size:.98rem;
+}
+.t-note{
+  margin:4px 0 0;
+  font-size:.85rem;
+  color:var(--text-soft);
+}
+.t-box{
+  margin-top:10px;
+  background:var(--bg-card);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:10px 14px;
+  font-size:.86rem;
+  color:var(--text-soft);
+}
+.empty-day{
+  font-size:.88rem;
+  color:var(--text-soft);
+  padding-left:18px;
+}
+
+/* ---- 9/28 晴れ／雨 切り替えボタン ---- */
+.weather-toggle{
+  display:flex;
+  gap:10px;
+  margin:-4px 0 18px;
+}
+.weather-btn{
+  flex:1;
+  padding:8px 0;
+  border:1.5px solid var(--accent);
+  border-radius:999px;
+  background:var(--bg-card);
+  color:var(--accent-dark);
+  font-family:"Segoe UI","Meiryo",sans-serif;
+  font-weight:700;
+  font-size:.9rem;
+  cursor:pointer;
+}
+.weather-btn.is-active{
+  background:var(--accent);
+  color:var(--on-accent);
+}
+.weather-schedule[data-weather-schedule="rainy"]{
+  display:none;
+}
+
+/* ---- 立替記録 ---- */
+.expense-box{
+  background:var(--bg-card);
+  border:1px dashed var(--accent);
+  border-radius:14px;
+  padding:20px;
+  text-align:center;
+  color:var(--text-soft);
+  font-size:.92rem;
+}
+.expense-box strong{
+  display:block;
+  color:var(--accent-dark);
+  font-size:1rem;
+  margin-bottom:6px;
+}
+
+/* ---- ページトップへ戻るボタン (scroll.js と連動) ---- */
+.scroll{
+  position:fixed;
+  right:18px;
+  bottom:calc(18px + env(safe-area-inset-bottom,0px));
+  z-index:30;
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  background:var(--accent);
+  color:var(--on-accent);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  font-size:1rem;
+  box-shadow:0 3px 10px rgba(0,0,0,.25);
+}
+.scroll:active{background:var(--accent-dark);}
