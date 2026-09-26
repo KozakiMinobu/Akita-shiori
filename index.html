@@ -17,20 +17,12 @@
 </header>
 
 <nav class="tabs">
-  <a href="#reserve">予約</a>
   <a href="#spots">観光リスト</a>
   <a href="#schedule">スケジュール</a>
   <a href="#expenses">立替記録</a>
 </nav>
 
 <main>
-
-  <section id="spots"></section>
-  <h2 class="section-title">予約</h2>
-  <h3><a href="https://oganavi.com/namahage_shuttle/search/" target="_blank" rel="noopener">なまはげシャトル</a>(9月27日21:00まで！！)</h3>
-
-  <h3><a href="https://akitaryori-tyawanya.com/" target="_blank" rel="noopener">ちゃわん屋</a>9月27日18:00に予約済</h3>
-
   <section id="spots">
     <h2 class="section-title">行きたいところ・食べたいものリスト</h2>
 
@@ -56,23 +48,6 @@
       <div class="spot-body">
         <div class="spot-photo">
           <img src="images/babahera.jpg" alt="ババヘラアイス"
-               onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-          <div class="fallback" style="display:none;">画像未設置</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="spot-card">
-      <h3><a href="https://oganavi.com/spot/57/" target="_blank" rel="noopener">鵜ノ崎海岸</a></h3>
-      <div class="spot-body">
-        <dl>
-          <dt>目的</dt>
-          <dd>きれいな風景を見る！</dd>
-          <dt>備考</dt>
-          <dd>雨天中止</dd>
-        </dl>
-        <div class="spot-photo">
-          <img src="images/unosaki.jpg" alt="鵜ノ崎海岸"
                onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
           <div class="fallback" style="display:none;">画像未設置</div>
         </div>
@@ -201,10 +176,62 @@
     <div class="day-block">
       <h3 id="day2" class="day-heading">9.28（Mon）　男鹿観光</h3>
       <div class="weather-toggle">
-        <button type="button" class="weather-btn" data-weather="sunny">晴れ☀</button>
         <button type="button" class="weather-btn" data-weather="rainy">雨☂</button>
+        <button type="button" class="weather-btn" data-weather="sunny">晴れ☀</button>
       </div>
-      <ol class="timeline weather-schedule" data-weather-schedule="sunny">
+     
+      <ol class="timeline weather-schedule" data-weather-schedule="rainy">
+        <li>
+          <div class="t-time">9:24</div>
+          <div class="t-event">秋田駅</div>
+          <div class="t-note">ダイヤ変更の可能性あり。要確認。</div>
+          <div class="t-note">備考：810円</div>
+        </li>
+         <li>
+          <div class="t-time">10:16</div>
+          <div class="t-event">男鹿駅</div>
+          <div class="t-note">時間があくので、ここで男鹿駅周辺を散策。ちかくの「おがジェラート」にババヘラアイスあり。</div>
+        </li>
+        <li>
+          <div class="t-time">11:21</div>
+          <div class="t-event">男鹿駅発</div>
+          <div class="t-note">バス【8】男鹿北線</div>
+          <div class="t-note">備考：200円</div>
+        </li>
+        <li>
+          <div class="t-time">12:29</div>
+          <div class="t-event">男鹿水族館GAO</div>
+          <div class="t-note">レストランあり</div>
+        </li>
+        <li>
+          <div class="t-time">14:27 or 15:52</div>
+          <div class="t-event">男鹿水族館GAO 発</div>
+          <div class="t-note">なまはげシャトル</div>
+          <div class="t-note">備考：1,600円</div>
+        </li>
+        <li>
+          <div class="t-time">15:38 or 17:03</div>
+          <div class="t-event">男鹿駅 着</div>
+        </li>
+        <li>
+          <div class="t-time">17:03 or 18:05</div>
+          <div class="t-event">男鹿駅 発</div>
+          <div class="t-note">ダイヤ変更の可能性あり。要確認。</div>
+          <div class="t-note">備考：803円</div>
+        </li>
+        <li>
+          <div class="t-time">17:56 or 18:56</div>
+          <div class="t-event">秋田駅 着</div>
+        </li>
+        <li>
+          <div class="t-time">夜</div>
+          <div class="t-event">秋田市内でごはん</div>
+          <div class="t-note">その日の気分で決めよう</div>
+        </li>
+        <li></li>        
+      </ol>
+
+       <ol class="timeline weather-schedule" data-weather-schedule="sunny">
         <li>
           <div class="t-time">9:24</div>
           <div class="t-event">秋田駅</div>
@@ -262,56 +289,6 @@
           <div class="t-event">秋田市内でごはん</div>
           <div class="t-note">その日の気分で決めよう
           </div>
-        </li>
-        <li></li>        
-      </ol>
-
-      <ol class="timeline weather-schedule" data-weather-schedule="rainy">
-        <li>
-          <div class="t-time">9:24</div>
-          <div class="t-event">秋田駅</div>
-          <div class="t-note">ダイヤ変更の可能性あり。要確認。</div>
-          <div class="t-note">備考：810円</div>
-        </li>
-         <li>
-          <div class="t-time">10:16</div>
-          <div class="t-event">男鹿駅</div>
-        </li>
-        <li>
-          <div class="t-time">10:30</div>
-          <div class="t-event">男鹿駅発</div>
-          <div class="t-note">なまはげシャトル</div>
-          <div class="t-note">備考：1,600円</div>
-        </li>
-        <li>
-          <div class="t-time">11:15</div>
-          <div class="t-event">男鹿水族館GAO</div>
-          <div class="t-note">レストランあり</div>
-        </li>
-        <li>
-          <div class="t-time">14:00</div>
-          <div class="t-event">男鹿水族館GAO 発</div>
-          <div class="t-note">なまはげシャトル</div>
-          <div class="t-note">備考：1,600円</div>
-        </li>
-        <li>
-          <div class="t-time">14:50</div>
-          <div class="t-event">男鹿駅 着</div>
-        </li>
-        <li>
-          <div class="t-time">15:38</div>
-          <div class="t-event">男鹿駅 発</div>
-          <div class="t-note">ダイヤ変更の可能性あり。要確認。</div>
-          <div class="t-note">備考：810円</div>
-        </li>
-        <li>
-          <div class="t-time">16:37</div>
-          <div class="t-event">秋田駅 着</div>
-        </li>
-        <li>
-          <div class="t-time">夜</div>
-          <div class="t-event">秋田市内でごはん</div>
-          <div class="t-note">その日の気分で決めよう</div>
         </li>
         <li></li>        
       </ol>
